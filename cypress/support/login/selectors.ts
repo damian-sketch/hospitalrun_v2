@@ -1,6 +1,7 @@
-export const loginSelectors = {
-    email: "#identification",
-    pass: "#password",
-    button: ".btn",
-    header: ".view-current-title"
-}
+
+    const email =  "#identification";
+    const pass =  "#password";
+    const button =  ".btn";
+    const header =  ".view-current-title"
+
+export {email, pass, button, header} 

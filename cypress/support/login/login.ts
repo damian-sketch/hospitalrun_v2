@@ -1,9 +1,9 @@
-import { loginSelectors } from './selectors'
+import {email, pass, button, header}  from './selectors'
 
 Cypress.Commands.add('login', (username: string, password: string) => {
     return cy
-    .get(loginSelectors.email).type(username)
-    .get(loginSelectors.pass).type(password)
-    .get(loginSelectors.button).click()
-    .get(loginSelectors.header).should('have.text', 'Patient Listing')
+    .get(email).type(username)
+    .get(pass).type(password)
+    .get(button).click()
+    .get(header).should('have.text', 'Patient Listing')
 })
