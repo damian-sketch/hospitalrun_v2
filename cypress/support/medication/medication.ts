@@ -1,16 +1,34 @@
-import {medication, newRequest, patientinput, patientOption, medicationInput, medicationOption, prescriptionInput, prescriptionDate, quantityInput, refillsInput, visit, addBtn, savedPopup, crossIcon, okBtn, updateBtn} from './selectors';
+import {
+  medication,
+  newRequest,
+  patientinput,
+  patientOption,
+  medicationInput,
+  medicationOption,
+  prescriptionInput,
+  prescriptionDate,
+  quantityInput,
+  refillsInput,
+  visit,
+  addBtn,
+  savedPopup,
+  crossIcon,
+  okBtn,
+  updateBtn,
+} from './selectors'
 
-Cypress.Commands.add('medication', (patient, medicine, prescription, date, quantity, refills ) => {
-
+Cypress.Commands.add(
+  'medication',
+  (patient, medicine, prescription, date, quantity, refills) => {
     const arrPatient = [...patient]
 
     cy.get(medication).click()
     cy.get(newRequest).click()
     cy.get(patientinput).click()
     cy.wait(3000)
-    for (let i=0; i < arrPatient.length; i++) {
-        cy.get( patientinput).type(arrPatient[i]);
-        cy.wait(200)
+    for (let i = 0; i < arrPatient.length; i++) {
+      cy.get(patientinput).type(arrPatient[i])
+      cy.wait(200)
     } // this is done to mimic slow human typing
     cy.get(patientOption).click()
     cy.get(medicationInput).click()
@@ -30,6 +48,5 @@ Cypress.Commands.add('medication', (patient, medicine, prescription, date, quant
     cy.get(okBtn).should('exist')
     cy.get(okBtn).click()
     cy.get(updateBtn).should('exist')
-
-
-})
+  }
+)

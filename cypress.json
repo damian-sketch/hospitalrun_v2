@@ -1,5 +1,6 @@
 {
-  "defaultCommandTimeout": 12000,
+  "baseUrl": "http://demo.hospitalrun.io/",
+  "defaultCommandTimeout": 120000,
   "pageLoadTimeout": 100000,
   "projectId": "q3vtbq"
 }
